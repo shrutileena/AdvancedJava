@@ -1,0 +1,20 @@
+Questions:
+
+Q. What is final??
+The final keyword is a non-access modifier used for classes, attributes and methods, which makes them non-changeable (impossible to inherit or override). The final keyword is useful when you want a variable to always store the same value, like PI (3.14159...). The final keyword is called a "modifier".
+
+Q. What is Race Condition??
+A  race condition can be defined as, a condition in which two or more threads compete together to get certain shared resources.
+For example, if thread A is reading data from the linked list and another thread B is trying to delete the same data. This process leads to a race condition that may result in run time error.
+
+Q. What is Synchronization??
+Synchronization in java is the capability to control the access of multiple threads to any shared resource. In the Multithreading concept, multiple threads try to access the shared resources at a time to produce inconsistent results. The synchronization is necessary for reliable communication between threads.
+
+Q. What is mutual exclusion??
+A mutex (or mutual exclusion) is the simplest type of synchronizer – it ensures that only one thread can execute the critical section of a computer program at a time. To access a critical section, a thread acquires the mutex, then accesses the critical section, and finally releases the mutex.
+
+Q. What is Static??
+
+Q. What is Public??
+
+Q. What is Segmentation Fault??

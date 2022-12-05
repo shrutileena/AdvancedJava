@@ -1,0 +1,49 @@
+Java Advanced Notes
+
+Functional Programming
+
+Section - 1
+
+- Functional programming is an alternative to object-oriented programming that is centered around pure functions. Functional applications avoid the shared state, and tend to be more concise and predictable than those using object-oriented code. This course is designed for Java developers who want to transition to functional-style programming using the new language features in Java 9, including lambdas and the streams framework. Computer science professor Marco Faella shows how to use method references and lambda expressions to refer to existing methods and define new functions on the fly, and use streams to convert sequential processing tasks into parallel computations—maximizing your hardware's potential. Plus, see these concepts in action, in an example that shows how functional-style programming can be used improve the performance of collision detection algorithms in 2D games.
+
+- Lambda-Calculus : 
+	- Mathematical language (Abstract)
+	- Invented by Alonzo Church , 1935
+	- The first programming language
+	- The successor function (x+1): lambda wyx.y(wyx)
+	- A language of functions
+	- In the Mathematical Sense:
+		- Same Input -> Same Output
+		- i.e., stateless; No memory of previous inputs or anything happened in the past
+		- a.k.a. purity, absence of side effects, referential transparency
+		- No variable, assignments, or loops
+	
+	Example - 
+	- A program to find sum of values in an array can we done in two ways - Iterative way OR Recursive way
+	- Iterative way takes constant space
+	- Recursive way takes linear space for the array passed as a parameter at each recursion
+	- Imp Note : Java is not optimised for recursion.
+		
+- Modern Functional Languages
+	- LISP
+		- LISt Processor
+		- 1958, second programming language after Fortran Scheme Clojure (2007, runs on JVM)
+	- Haskell (1990)
+	- ML 
+		- Meta Language
+		- 1973, F# (part of Microsoft .NET framework, mutli-paradigm)
+		
+- Why Functional Programming ?
+
+	Benefits related to Parallelism
+	
+	- Functional programs are based on composition of functions instead of communication (such as comm. within diff threads) - f(g(a), h(b), g(c))
+	- Stateless functions g and h can be evaluated in any order and result will still be the same. 	
+	- Can be evaluated even in parallel at the same time.
+	- Communication only through return values
+	- No race conditions, no need to synchronize, no need of mutual exclusion, and so on
+	- Much simpler than multi - threading
+	
+- Interfaces 
+	- Static methods
+		- 
