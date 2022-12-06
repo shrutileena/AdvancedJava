@@ -1,0 +1,13 @@
+1. Multiple and Hybrid Inheritance is not supported in Java, as it can cause unnecessary complexity (expecially in casting, constructor chaining and other java operations) and are rarely required.
+
+2. Only Single-level, Multilevel, and Hierarchical Inheritance are supported in Java.
+
+3. In Java a class can only have one super class, multiple sub classes.
+
+4. If you need multiple super classes, use Multilevel Inheritance
+
+5. For Inheritance we use 'extends' keyword. We use super() constructor in the constructor of the sub class to initialize the inherited attributes.
+
+6. protected Access Modifier can be used when we want sub class to access the attribute in the super class directly.
+
+7. Or we can use super.<attribute name in super class> to access the attribute in the super class.

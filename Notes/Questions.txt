@@ -34,3 +34,5 @@ Q. What is enum in Java?? Is it same as a class?? Try this in code.
 ***********************/////*********************
 
 Q. Can we reference non static attribute inside a static method??
+
+Q. What is Default constructor??
