@@ -18,3 +18,19 @@ Q. What is Static??
 Q. What is Public??
 
 Q. What is Segmentation Fault??
+
+Q. What is Interface??
+
+Q. What are Instance Methods??
+
+Q. What are Static Methods or Class Methods??
+
+Q. Difference between Static and Instance variables??
+
+Q. println is a class method or instance method??
+
+***********************/////*********************
+Q. What is enum in Java?? Is it same as a class?? Try this in code.
+***********************/////*********************
+
+Q. Can we reference non static attribute inside a static method??
