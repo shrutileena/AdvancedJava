@@ -2,6 +2,7 @@ package Programs.com.example.ConditionArrayList;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.function.Predicate;
 
 public class Main {
 
@@ -41,5 +42,17 @@ public class Main {
         listy.add(2);
         addRandomNumber(listy);
         System.out.println(listy);
+
+        Predicate<Integer> isDivisibleByThree = n -> Math.abs(n) % 3 == 0;
+
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        arrayList.add(1);
+        arrayList.add(4);
+        arrayList.add(3);
+        arrayList.add(6);
+        arrayList.add(13);
+
+        ConditionArrayList divisibleByThreeListy = new ConditionArrayList(isDivisibleByThree, arrayList);
+        System.out.println(divisibleByThreeListy);
     }
 }

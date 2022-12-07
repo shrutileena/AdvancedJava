@@ -18,4 +18,21 @@
 
 10. polymorphism helps us reduce code complexity and write reuable code.
 
-11.  
+11. Abstraction helps us hide implementation complexity.
+
+12. Abstract Class is almost like a template class where some of the functionality is not implementated yet. We cannot instantiate an abstract class. Other classes can extend the abstract class and implement approriate functionality.
+
+13. Classes with abstract methods must be denoted with abstract keyword.
+
+14. Another way to add Abstraction is through interfaces. Interface is a set of method signatures for to-be-implementated functionality.
+It is a specification for a set of behaviours without implementation. Cannot be instantiated just like abstract classes. We can use it
+using 'implements' keyword.
+
+15. interfaces cannot have constructors.
+
+16. In java, a class can only extend one other class. But it can implement many interfaces.
+
+17. Interfaces can extend other interfaces.
+
+18. Process - first create a interface > then abstract classes that implements that interface but some base abstract methods > 
+then classes that extends those abstract classes and override functionality or their own methods.

@@ -48,3 +48,9 @@ Q. What is ... in java??
 Q. What is predictable??
 
 Q. What is instanceOf Operator??
+
+Q. What is an ArrayList??
+
+Q. What is toString() method override??
+
+Q. What is a concrete class??
