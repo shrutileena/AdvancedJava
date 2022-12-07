@@ -36,3 +36,15 @@ Q. What is enum in Java?? Is it same as a class?? Try this in code.
 Q. Can we reference non static attribute inside a static method??
 
 Q. What is Default constructor??
+
+Q. What is Unary Operator??
+
+Q. What are Collections??
+
+Q. What are streams??
+
+Q. What is ... in java??
+
+Q. What is predictable??
+
+Q. What is instanceOf Operator??

@@ -11,3 +11,11 @@
 6. protected Access Modifier can be used when we want sub class to access the attribute in the super class directly.
 
 7. Or we can use super.<attribute name in super class> to access the attribute in the super class.
+
+8. polymorphism is the ability for an object or function to take many different forms.
+
+9. Java supports runtime and compile time polymorphism.
+
+10. polymorphism helps us reduce code complexity and write reuable code.
+
+11.  
