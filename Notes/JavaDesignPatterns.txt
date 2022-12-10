@@ -1,0 +1,50 @@
+Java Design Patterns : Creational
+
+What is a Design Pattern?
+
+- A design pattern is a way of structuring code to solve a specific problem
+- You don't need to know complex code
+- Design patterns were invented by the Gang of Four 
+    - Erich Gamma
+    - Richard Helm
+    - Ralph Johnson
+    - John Vlissides
+- Way of reusing other people's knowledge
+- Similar to a recipe
+- Save time
+- Not specific to a type of application
+- Guidelines, not content
+- Useful for writing and refactoring existing Java code
+
+Creational Design Pattern 
+
+- Used to abstract the process of instantiating objects
+- Used in scenarios when a system should not be dependent on how objects are created
+- For example, a game for building houses
+- patterns encapsulates the code for creating objects
+- They become more important as systems become more complex
+- Consider using an interface
+- Creational design patterns are about defining a small subset of behaviors that can be used for the basis of lots more complex behaviors
+- There are two main themes that are common to most creational design patterns. 
+    - The first is that they encapsulate knowledge about which concrete class the system should use. 
+    - The second is that they conceal how objects are created and put together. 
+    
+    Abstracting this information makes the code much more flexible. The system is much less constrained by what gets created, how it gets created and when it gets created. 
+    Sometimes there are situations where a number of different creational design patterns could be used in a single situation. In a sense, the designs are competing in these instances. 
+    At other times, it might be possible to use multiple patterns because they work well together and complement each other.
+
+The Builder Pattern
+- Purpose - to avoid complex constructors (with large no. of parameters)
+- Long list of parameters are confusing 
+- Sometimes not all info is needed, but still need to pass info
+- to fix this we can have multiple constructors with diff no. of parameters. 
+- This technique is called the 'telescoping constructor' pattern. 
+- problem with this technique - class ends up having a large no. of constructors
+                              - code becomes very long as no. of constructors would be permutations and combination of parameters
+                              - for 8 parameters = 254 different constructors
+- So, Builder pattern is the way to fix this problem
+- It keeps all the flexibility of the telescoping approach but without the complexity. 
+- It moves the construction of complex objects out of the constructor. 
+- It also allows for different combinations of fields with one single construction process. 
+- Classes that use the builder pattern scale much better and are far easier to read in this scenario.
+

@@ -1,0 +1,73 @@
+Lambda expressions - 
+
+- Lambda expressions are compact syntax to implemente FIs
+ 
+    parameters -> body
+
+    parameters : 
+    (int a, int b)
+    (a, b)
+    (a)
+    ()
+    a
+    
+    body :
+    {block}
+    expr
+    
+    Example - 
+
+    Comparator<String> byLength = 
+    (String a, String b) -> {
+        return Integer.compare(a.length(), b.length());
+    };
+
+- Type Inference
+    - Infer a type at compile time
+    - The compiler filling in a missing type; way of the compiler
+    - been there since java 5
+    - Type Inference works in lambda
+        - Identify the FI implemented by the given lambda expression
+        - Identify the parameter type (if omitted)
+
+    Receiving Context - 
+    - Context must contain enough info to identify the receiving FI
+        Example - 
+        1. RHS of assignment
+            Consumer<String> = lambda
+
+        2. Actual parameter of a method or constructor
+            new Thread(lambda)
+
+        3. Argument of 'return'
+            return lambda
+
+        4. Argument of a cast
+            (Consumer<String>) lambda
+
+- Capturing fields (taking variable values in lambda)
+    Lambda expressions can access:
+    1. Static fields of enclosing class
+    2. instance fields of enclosing object
+
+    How - They store a reference to the enclosing object
+
+
+- Effectively Final Variables
+    - A variable that is used as if it was final
+    - not reassigned
+    Note: It is a good practice to declare them final
+
+- Capturing Local Variables
+    - Lambda expressions can access local Variables of the enclosing method provided they are Effectively final
+    - How?
+        They store a copy of their value (same rule as anonymous classes)
+
+Difference between Lambda Expressions and Anonymous Class - 
+1. Lambdas are not succinct
+2. Lambdas do not create additional class files
+3. Not every occurrence of a lambda creates a new object
+
+disadvantage of lambda - 
+- Lambdas only work for FIs (with one abstract method)
+- Anonymous classes can have state (i.e.,fields)

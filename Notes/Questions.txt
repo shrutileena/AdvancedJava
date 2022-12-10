@@ -54,3 +54,8 @@ Q. What is an ArrayList??
 Q. What is toString() method override??
 
 Q. What is a concrete class??
+
+Q. What are programming paradigm??
+
+Q. What is an Anonymous Class??
+

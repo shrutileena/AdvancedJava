@@ -8,7 +8,7 @@ public class Main {
 
         DigitsOnlyFileReader digitsOnlyFileReader = new DigitsOnlyFileReader("F:\\Projects\\AdvancedJava\\Notes\\Basics.txt");
 
-        digitsOnlyFileReader.readFile();
-        digitsOnlyFileReader.getPath();
+        System.out.println(digitsOnlyFileReader.readFile());
+        System.out.println(digitsOnlyFileReader.getPath());
     }
 }

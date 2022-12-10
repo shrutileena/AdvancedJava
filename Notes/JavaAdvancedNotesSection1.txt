@@ -4,7 +4,11 @@ Functional Programming
 
 Section - 1
 
-- Functional programming is an alternative to object-oriented programming that is centered around pure functions. Functional applications avoid the shared state, and tend to be more concise and predictable than those using object-oriented code. This course is designed for Java developers who want to transition to functional-style programming using the new language features in Java 9, including lambdas and the streams framework. Computer science professor Marco Faella shows how to use method references and lambda expressions to refer to existing methods and define new functions on the fly, and use streams to convert sequential processing tasks into parallel computations—maximizing your hardware's potential. Plus, see these concepts in action, in an example that shows how functional-style programming can be used improve the performance of collision detection algorithms in 2D games.
+- Functional programming is an alternative to object-oriented programming that is centered around pure functions. 
+- Functional applications avoid the shared state, and tend to be more concise and predictable than those using object-oriented code.
+- This course is designed for Java developers who want to transition to functional-style programming using the new language features in Java 9, including lambdas and the streams framework. 
+- Computer science professor Marco Faella shows how to use method references and lambda expressions to refer to existing methods and define new functions on the fly, and use streams to convert sequential processing tasks into parallel computations—maximizing your hardware's potential. 
+- Plus, see these concepts in action, in an example that shows how functional-style programming can be used improve the performance of collision detection algorithms in 2D games.
 
 - Lambda-Calculus : 
 	- Mathematical language (Abstract)
@@ -45,5 +49,31 @@ Section - 1
 	- Much simpler than multi - threading
 	
 - Interfaces 
-	- Static methods
-		- 
+	- in Java 9, interfaces can have public static methods
+	- Interfaces can have 'default' methods - concrete instance methods, which can be overridden; they can provide behaviour along with signatures; declared using 'default' keyword
+	- Comparator classes
+
+Difference between Interfaces and Abstract Classes -
+
+- Interfaces are still stateless (no instance fields)
+- Interfaces provide behaviour, not state; Abstract classes provide behaviour and state
+
+Functional Interfaces - 
+- Any interface having a single Abstract method
+- static and default methods allowed
+- Examples - 
+	1. Scalable Interface
+	2. Runnable, Comparable, Comparator, Iterable
+- Intended to be implemented by stateless classes (no instance fields)
+	Examples - 
+	1. Scalable - not pure; classes implementing it are not expected to be stateless. There are going to be some graphical items, having some size.
+	2. Runnable - not pure; most likely to have instance fiels.
+	3. Comparable - not pure;
+	4. Comparator - pure
+
+- Annotation - @FunctionalInterface
+  - check single Abstract method, and if not present, or more than one present then it gives compile time error
+  - Comparator is annotated with it. Comparable is not.
+
+- More than 40 pure FIs in Java 9 API
+- Package java.util.function
