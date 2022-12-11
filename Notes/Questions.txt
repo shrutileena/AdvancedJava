@@ -59,3 +59,15 @@ Q. What are programming paradigm??
 
 Q. What is an Anonymous Class??
 
+Q. What is an abstract interface??
+
+Q. What is eager initialization??
+
+Q. What is lazy initialization??
+
+Q. How is Java lazy loading??
+
+Q. What is Collections.singletonList(), Collections.singletonMap(), and Collections.singletonSet()?? 
+
+Q. What is a Cloneable Interface??
+

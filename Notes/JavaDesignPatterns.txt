@@ -48,3 +48,49 @@ The Builder Pattern
 - It also allows for different combinations of fields with one single construction process. 
 - Classes that use the builder pattern scale much better and are far easier to read in this scenario.
 
+- Builder Pattern has several components - 
+    - Director - used for constructing object using builder
+    - Builder 
+    - Product - complex object that needs to be constructed\
+
+- In classic Builder Pattern, the Builder class is actually an abstract interface.
+
+
+Singleton Pattern
+- When to use?
+    - The Singleton pattern should be used when you want to make sure that only one instance of a class can be created. There might be times when you want to make it impossible to create multiple instances of a class while still making sure that there is a way to access that one instance.
+    For Example - 
+     window managers, 
+     database connectors, 
+     file managers, 
+     resource accessors and spoolers
+
+    - Say, for example, that you have a class that controls access to a resource like a printer. You might have multiple printers, but you would want to make absolutely sure that only one instance of the class that controls access to them could be created. If there are multiple print spoolers, they might try and allow two different processes access to the printer at the same time. Or say you had a logging class that needs to be used repeatedly by all the files in your project. Again, you would want to make sure that there was only one instance of that logging class. Having multiple instances might cause your program to give incorrect results, behave strangely, or crash. 
+
+    - Examples of Singleton pattern in the Java application
+        - the Desktop class, 
+        - the System class, and 
+        - the Runtime class. 
+
+    - Every Java application has one, and only one, instance of Runtime, which can be accessed with the public method get Runtime. 
+
+    - The Singleton pattern is perceived as one of the simpler creational design patterns and it is fairly straightforward to understand the concept, but it shouldn't be overused. 
+
+    -     // synchronized is used when we want to prevent two resources using same instance at the same time
+    // synchronized prevents two threads entering a method at the same time
+    // It will not allow second thread to access this method till first method is still has access to it
+    // It will lock it until it had finished
+    // It can slow the program due to thread waiting
+    // to improve this - instead of creating object inside getInstance() method, we can create it when we are declaring it. Also make it final
+    // but its adviced to create object inside getInstance() method. As soon as class is loading, we will create an object will will be eager initialization. But in Java it is okay as Java works on lazy loading. 
+
+
+Prototype Pattern
+- involves making a copy of one original object. 
+- It is useful when you want to create a new object, but a similar one already exists. 
+- In particular, it should be used when you do not want a system to know details of how objects are created
+- Say for example, there is an application that simulates a field of rabbits, and the while the application is running, the rabbits breed. Instead of creating a new rabbit object each time, it would be easier and more efficient to clone a single prototype rabbit. This technique is particular useful if creating a new rabbit object is a memory-intensive process. It can make the application faster, as well as make the code shorter and cleaner. 
+-  This pattern should be used when the application using the cloned objects should not need to know about how an object is created. 
+- It is also useful when classes are loaded dynamically. 
+- For example, in an application that creates new rabbit objects as it runs, the rabbits are only created once the program has started running. This can slow the program down because new objects are being created all the time. But if the objects can be cloned, this will save memory. 
+-  In the classic prototype pattern, there is an abstract prototype class that has a method called clone. 
