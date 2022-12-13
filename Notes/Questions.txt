@@ -71,3 +71,4 @@ Q. What is Collections.singletonList(), Collections.singletonMap(), and Collecti
 
 Q. What is a Cloneable Interface??
 
+Q. What are different Creational Design patterns??

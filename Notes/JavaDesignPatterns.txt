@@ -51,7 +51,7 @@ The Builder Pattern
 - Builder Pattern has several components - 
     - Director - used for constructing object using builder
     - Builder 
-    - Product - complex object that needs to be constructed\
+    - Product - complex object that needs to be constructed
 
 - In classic Builder Pattern, the Builder class is actually an abstract interface.
 
@@ -94,3 +94,33 @@ Prototype Pattern
 - It is also useful when classes are loaded dynamically. 
 - For example, in an application that creates new rabbit objects as it runs, the rabbits are only created once the program has started running. This can slow the program down because new objects are being created all the time. But if the objects can be cloned, this will save memory. 
 -  In the classic prototype pattern, there is an abstract prototype class that has a method called clone. 
+
+
+
+The Factory Method Pattern
+- The factory method deals with the problem of needing to crate objects but not knowing exactly what type of objects need to be created. 
+- There might be a class that creates new objects, but when the class is written, you want to be flexible about the type of objects it creates. 
+- In fact, the class might have no idea what kind of objects it will want to create. 
+- For example, say that there is a candy store that sells different types of candy. The owners of the candy store will want to buy in stock, but when they open the store, they won't know which candy they will want to buy in the future.
+-  The job of the store is just to sell candy. It is not the job of the store to get involved with exactly how the candy is created.
+- The solution to this problem is to use the factory method pattern. This involves adding an extra class between the candy store and the candy. 
+- This class has something called a factory method which handles deciding which class to return. This means that all the code that decides which candy to make is moved out of the candy store and into the candy factory. This makes it much easier if the owner of the shop wants to start selling new types of candy. 
+- In that case, the code in the candy store class does not need to be changed at all anymore. Instead, the candy factory class worries about all of this for us. This makes the code much more maintainable.
+
+
+
+Abstract Factory Pattern
+- The Abstract Factory Pattern provides an interface for creating families of objects without specifying what their concrete types are.
+- It should be used when there is a system that creates objects, but how those objects are created should be hidden from view. 
+- In particular, it is used when applications have families of objects. The application should be able to choose which of a selection of families it wants to use. 
+- The abstract factory pattern can ensure that family groups are used together. 
+- Say, for example, there is an application that builds bicycles. First, all of the individual bike parts need to be built. The wheels, handlebars, gear and frame, and so on, need to be made, and not just any old parts. 
+- To make a mountain bike, for example, you need wheels with a strong frame and thick tires. Mountain bikes also need straight handlebars, so these different parts are examples of a family of objects that need to be made together. 
+- The process of making a mountain bike is different to making a road bike, which has different wheels, gears, handlebars and so on. 
+- It would be wrong to mix up any of the parts for the two bikes. If the road bike had a mountain bike wheel, it would not work very well. Both types of bikes have the same kinds of parts, i.e., they both have wheels, but the actual parts themselves are different. 
+- This can be complex when it comes to representing a bike builder in Java code. A constraint of a bike builder class is that it does not want to hard code the parts when a specific bike is built. This would be inflexible and lead to long and complex code all in one place. 
+- If any changes needed to be made to how a specific type of bike part is built, this code would need to change again. 
+- The BikeBuilder shouldn't need to care about how the bike parts are built. It just wants to ask for the bike parts and be given them.
+- The abstract factory pattern solves this problem by providing an interface for making different types of bikes. In this case, there would be an interface called BikeFactory which has two concrete implementations, MountainBikeFactory and RoadBikeFactory, and MountainBikeFactory would return a mountain bike wheel, which is a concrete implementation of a wheel interface, and a RoadBikeFactory would return a road bike wheel, which is another concrete implementation of Wheel. 
+- This way, the bike builder does not need to know about how the different parts are made because the concrete classes are isolated from it. 
+- It also promotes consistency. If the bike builder is using a MountainBikeFactory class, it cannot create any parts other than a mountain bike part. If it asks for a wheel, a mountain bike wheel is created and returned. There is no need to specify that a mountain bike wheel is needed, because the abstract factory already knows and deals with that. This is a much better way to structure the code.
