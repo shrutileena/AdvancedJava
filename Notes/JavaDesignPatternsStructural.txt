@@ -1,0 +1,102 @@
+Java Design Patterns : Structural
+
+- Structural design patterns are a way of structuring codes to make it more simple, maintainable and effective. 
+- Structural design patterns are all to do with how classes and objects are structured and used together to form larger structures. 
+- There are two different types of structural patterns, class patterns and object patterns. 
+- You can think of the difference between class patterns and object patterns as the difference between is a and has a relationships. 
+- For example, a car is a vehicle, and a car has an engine. Class patterns are concerned with the is a relationships, and object patterns are concerned with the has a relationships.
+- Structural Class patterns are all to do with how classes are structured and interact. There's a particular focus on how inheritance is used to create structures. Several of these patterns make use of interfaces to define shared functionality. 
+- Structural object patterns are all about how to use objects. Structural patterns can allow you to change the behavior of individual objects at runtime.
+
+Adapter Pattern - 
+
+- What if you want to use a class that belongs to a third party app, but it doesn't fit with your app because of incompatible interfaces. The adapter pattern provides a way for classes to work together that normally wouldn't be able to. 
+- So imagine you have a plug, that you can use to plug in different USB cables. So you can use the plug to charge a range of different devices like your phone, and your tablets, and your fitness watch. But when you go abroad, the plug doesn't fit in the socket and you can't use it to charge anything. So instead you can use a plug adapter and the adapter allows you to charge all of your devices abroad. 
+- If this real world example was written in Java code, the charger would be an interface. Then the concrete classes would be the phone charger, the tablet charger, and the watch charger, which can then charge all of these devices in the U.S. Say someone else has written some code for charging phones in Europe, but their code doesn't know about our charger interface. So I can't use charger objects and the European phone charger interchangeably. 
+- Using the adapter pattern, we can create an adapter object that inherits from the charger interface, but contains the implementation of a European phone charger. 
+- Another option would be to change the source code of the class that you're trying to use, but this isn't always possible. It might be third party code that you don't have access to. 
+- And even if you did have access to the third party code, you shouldn't have to hack it just to make one application work. 
+- The code might be our own code, but it might be legacy codes that you need to reuse and you've decided that you don't want to change it. So you would use the adapter pattern when you want to use an existing class, but it doesn't fit into your class hierarchy. 
+- There are some examples of this pattern in the JDK itself. For example, the collections class has two methods lists and enumeration, which use the adapter pattern to provide compatibility with Legacy APIs that work with the enumerations. 
+- Another example is the as list method of the arrays class, which uses the adapter pattern to allow array based and collection based APIs to work together.
+
+Bridge Pattern - 
+
+- Imagine you have a Java app that uses lots of inheritance. It starts off as a nice, simple tree with a parent and a few children. Over time, you find that you need to add another level, and then someone else comes in and adds a level in between some of yours. A week later, you come into work and you have a huge inheritance tree. No one understands it, and it's well on it's way down the road to legacy code. Then someone new joins the team and you spend the next six months explaining the structure of your code base to them. 
+- Sometimes using the bridge pattern can help to simplify inheritance structures, making them more flexible and adaptable. 
+- A classic roll off example of where the bridge pattern can be used in a graphical user interface. You have interface called shape, and underneath you some classes such as circle and square. Then you might decide that you want to have different color shapes, so the next logical step is to extend the inheritance tree to have a blue circle, a red circle, a blue square, and a red square. 
+- Then you might decide that you want some green shapes as well. So you go ahead and make a green circle class and a green square class. 
+- Every time you want to add a color, you have to make two new classes. And then you decide you need to be able to draw triangles. Now you need to create a triangle class and another sub class for every different color. 
+- Suddenly, you have this really big complex tree again. 
+- If you want to make a change to how red shapes are implemented, you have to go and change every red shape class. 
+- And if you want to add a new shape or a new color, you have to add lots of new classes. 
+- Instead, you could use the bridge pattern to separate out your hierarchy and to make your code more flexible. 
+- The shape of the object can go in a separate hierarchy to the color of the object. 
+- This way if you want to add a new shape or new color, you only need to create one single new class. 
+- The implementation is then captured in that class so if it changes, it only needs to change in one place. 
+- This also removes a whole layer from the class hierarchy. 
+- The bridge pattern enables us to instantiate a blue square object, for example, without needing to write a blue square class. Instead I can use the characteristics of both the square class and the blue shape class. In this way, the bridge pattern can help me to write more maintainable code, it decouples the concrete implementation from the interface, and gives me more flexibility.
+
+Composite Pattern - 
+
+- Imagine a quiz night where people can choose to enter the quiz on their own. The person running the quiz has a list of all the people answering the quiz, but then some groups of people might want to enter as teams. The person running the quiz will treat the group of people as one entry, the same as the people entering on their own. 
+- In the context of the composite pattern, the group of people would be a composite that can be treated in the same way as an individual person answering. 
+- In Java, you've probably come across the concepts of Varargs. These are methods that take an argument, and the type of argument is followed by three dots. This notation means that when you call this method, you can pass in one variable, two variables, or however many variables you like. 
+- So in a typical Java app, a good place to use the composite pattern is where you want to treat single objects and groups of objects in the same way. 
+- If you're handling different types of objects in a similar way and you have code that's very similar or identical to handle these different types, this is when to start thinking about using the composite pattern.
+
+Decorator Pattern - 
+
+- The decorator pattern is a similar principle to decorating something in real life, where you have an object that's already created, like a Christmas tree or a cake, and you want to add some decorations to it. 
+- Imagine a bakery where cakes are baked and sold and the baker has different recipes for chocolate cakes, lemon cakes, cupcakes and so on. 
+- Suppose one day someone decides they want to order some cupcakes with a really specific pink icing on it. The baker wouldn't write a whole new recipe for cupcakes with pink icing. They would use the same cupcake recipe as normal but they would just add the icing on top after. 
+- A similar situation also applies in software. If you are representing this in Java code, you might have an interface called cake and beneath that the different types of cake. 
+- How would you handle the situation where you need a cupcake but with pink icing on it? One way would be to use inheritance and make the cupcake class inherit from a pink icing interface, too. But this approach has some drawbacks. The choice of having pink icing is made statically and I can't then control how and when the icing gets added. Also, if I wanted to add another decoration type, for example, sprinkles, I'd have to inherit from yet another interface. 
+- A cleaner solution would be to enclose the cupcake object in another object that adds the icing. This allows you to change the behavior of this cupcake object without affecting other cupcake objects. It also means that the single responsibility principle is a doozy. 
+- The behavior that's specific to cakes with pink icing is encapsulated inside the pink icing cake class instead of the cupcake class.
+- So, you would use the decorator pattern when you want to add additional responsibilities to an object dynamically. The decorator pattern is a more flexible way of achieving this than with subclassing.
+
+Facade Pattern - 
+
+-  Sometimes you'll have an app. That's has lots of complex functionality and you want to hide that complexity behind an interface, so it's easier to use. 
+- A real world example of a facade is a plug socket. Behind a plug socket there are wires and connections that most people don't understand. But on top of this is the plug socket that you see, and everyone knows how to use. The plug socket, in this case, is the facade. You only need to know that you can plug things into a plug socket and you don't need to know what's going on behind the scenes.
+- Another classic real world example of this is an operating system on a computer or a phone or a tablet. When you click on a button to open up an app on your phone, you don't see all the work the operating system is doing in the background. All you see is that you clicked on the button and the app has opened on your screen. 
+- In a Java app you might have lots of classes that do lots of complicated stuff under the hood. If someone wanted to use your app, they might have to interact with loads of different classes that do loads of different bits of functionality. 
+- A facade is an object that sits in between the complex app and the code trying to use it. This means that the client only has to interact with one object, the facade, instead of potentially several classes. 
+- So the main benefits of the facade pattern are that it makes it easier to use complex code. 
+- And it means there is loose coupling between the clients and the complex code. 
+- It also doesn't stop clients from using all the classes that are in the complex code, if they want to. 
+- The facade is optional and the complexities can always be accessed in the same way as before, if need be.
+
+Flyweight Pattern - 
+
+- Suppose you have hundreds of small objects in your application that use uploads of memory. 
+- The Flyweight Pattern uses sharing to make apps like these work more efficiently. 
+- Imagine a program that's used for creating and editing text documents. A user opens a document and starts typing on it. In an object-oriented design, you could have a new objects for each character. So every time they typed an A, you would create a new A object. That would be a lot of objects. If they opened up a document that was hundreds of pages long, there might be a million separate letter objects. 
+- This situation might lead to the dreaded java.lang.OutOfMemory error. 
+- Also in Java, it doesn't take long to create objects. In fact, it's actually pretty quick, but there is definitely an opportunity here to maximize performance. 
+- This is where the Flyweight Pattern can help. Instead of having a separate object for A, B, C, D, E, and so on, you could have one share object for all the A's and one for all the B's, and so on. This is okay because all A's look the same. 
+- They have the same character code and shape and so on, but they won't all have the same position on the documents. That will be different for each one. 
+- This is the difference between intrinsic and extrinsic states. The character code is intrinsic because it's the same for every letter A, but the position on the document is extrinsic, because it will be different for everyone. 
+- Flyweight objects allow you to share the intrinsic states, so the stuff is the same for every object. 
+- Information about the extrinsic states can be passed to the Flyweight objects when it needs it. 
+- The Flyweights objects can't make any assumptions about the external states, but apart from that, it should behave in the same way as an object that's not shared, You should be able to use it in multiple places at the same time as though they were separate objects.
+
+Proxy Pattern - 
+
+- The proxy pattern allows you to put off expensive operations until they are used.
+- A proxy is used as a source of replacement for a real object. It literally means a substitute for the real thing. 
+- In real life, a good example of a proxy is a bank card. Instead of paying with the real money in your accounts, your bank card acts as a proxy and allows you to access. the actual money when you need it. 
+- In computing, you might've have come across the concept of proxy servers, which is service that sit between the clients and the actual server and pass messages between the two. This is a similar concept to the proxy pattern in Java. 
+- There are a few different types of proxy patterns.  
+- Virtual proxies are used to save memory and improve startup times and applications. 
+- Say, for example, you have an app for displaying documents. There might be a big picture on page 50, say of the document. And when you open the document, you don't really want to load the big picture right away as that might take a long time and use lots of memory. 
+- You don't even know if the person using the app is ever going to scroll down to page 50. Instead of creating the big image object straight away, you could create a proxy object for it. 
+- Proxy objects differentiate between expensive operations and inexpensive operations. 
+- The image objects might have inexpensive methods like getWidth() and getHeight() and you might want to access this information before we actually draw it. 
+- Other things like loadImageFromDisk are expensive and we don't want to call them until we really need to. 
+- This is where the proxy pattern comes in to help. It only calls the expensive method when needed, this is a technique known as lazy loading. 
+- So the proxy pattern is used when he wants to replace an actual objects with something more versatile. 
+- It's sometime used in graphical user interfaces where you want to put offloading expensive objects. 
+- Another common use is for database connections, where your app has an expensive call to a database. And you only want to do that when you need to actually interact with the database, rather than its start up time. 
+- Other types of proxy, such as protection proxies, are used to restrict access rights. There might be a few parts of an application that needs to be verified with authentication credentials. A proxy can be used for that authentication and only allow access to the real object if the client provides the correct details.
