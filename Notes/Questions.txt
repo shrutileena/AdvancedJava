@@ -76,3 +76,10 @@ Q. What are different Creational Design patterns??
 Q. What are Varargs??
 
 Q. What is java.lang.OutOfMemory??
+
+Q. ??
+
+
+Functional prog with streams in Java 9
+2nd section - method references
+

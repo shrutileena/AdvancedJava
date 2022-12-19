@@ -1,3 +1,59 @@
 Java Design Patterns : Behavioral
 
-- Behavioral design patterns give you a way of designing codes to make it more simple, maintainable, and effective. Understanding how design patterns work can improve your understanding of how to write really high quality object-oriented code. This course is going to explore how to use behavioral design patterns to make you a better Java developer. I'm going to share the specific details of all the most well known behavioral patterns. I'll also discuss when to use them to improve your code. I'll teach each pattern by using real-world Java code examples from real situations to demonstrate how they can be used. And I'm also going to give you the chance to practice each one in a short coding exercise and I'll show you the solution afterwards.
+- Behavioral design patterns give you a way of designing codes to make it more simple, maintainable, and effective. 
+- Understanding how design patterns work can improve your understanding of how to write really high quality object-oriented code. 
+- Behavioral design patterns are about how objects assign responsibilities between each other. They're concerned with how objects are connected, how they communicate with each other, and how responsibilities are assigned between them. 
+- There are two different types of behavioral design pattern, class patterns and objects patterns. You can think of the difference between class patterns and object patterns as the difference between is a and has a relationships. For example, a dog is an animal and a dog has a tail. 
+- Class patterns are concerned with the is a relationships and object patterns are concerned with the has a relationships. 
+- Behavioral class patterns are concerned with how classes share responsibilities between themselves. This is usually done with inheritance. 
+- Behavioral object patterns are the most common type. These are about how different objects interact with each other. Sometimes they are a way to help different objects work together to perform a certain task. And sometimes they're about delegating requests to other objects. Behavioral objects patterns use composition instead of inheritance.
+
+The Chain of Responsibility pattern - 
+
+- If you have a situation where you have some code that needs to make a request, but you don't know until runtime which object will be handling that request, you might want to consider using the chain of responsibility pattern. 
+- As a real world example, imagine someone is using a software application and they find a bug, they need to tell someone about it so that the bug will get fixed. So they raise a support ticket in an online support system. And that gets picked up by a live support worker. In some cases, the life support worker might be able to respond directly to the user. If it's just a case of answering a question or something, but as this is a bug in the software, they then need to tell the product manager about the bug and pass on the details to them. The product manager looks at the impact of the bug and they decide they want to prioritize getting it fixed. So they ask a developer to fix it. That developer is working on something else they don't have time to fix it, but they do know another developer who does have time so they pass it on to them. That developer is able to fix the bug, so the other person who does it. 
+- In this situation the request to fix the bug spotted on this long chain, from the person who found it to the developer who fixed it. 
+- This is the concept of the chain of responsibility pattern. 
+- In Java Applications, the chain of responsibilities is used to pass along request to different objects until it finds the one that can handle it. 
+- The main benefits of this pattern is that it decouples the sender of the request from the receiver. 
+- Example of used cases for this in Java include, handling authentication where different types of authentication might be needed, servlet filters for processing HTTP requests and things like buttons and used interfaces, where the action taken when it's clicked depends on the context. 
+- There are a few things to watch out for, when you're implementing the chain of responsibility button. 
+- If it's not implemented correctly, it can lead to circular chains by the requests, just keep getting passed round in a circle to the same objects. 
+- There's also a chance that the requests just never gets handled, and it can also be difficult to debug problems with this design. 
+- Change of responsibility can lead say a quite confusing stack traces, and they can be quite confusing to follow. But if you do have a number of objects that could handle a certain requests and you want the right ones to be chosen dynamically. Then the chain of responsibility pattern is well worth considering.
+
+Command Pattern - 
+
+- Sometimes when writing software, you need to issue a request, but you might not know anything about what's being requested or what's receiving the request. 
+- So let's think about a real world example. Imagine someone's written an app for buying and selling things online. So the app could be used by lots of different companies, selling different things. 
+- One example might be a restaurant using it to allow customers to order food online. Another company might use it for selling clothes online. 
+- In both cases, the user journey is pretty much the same. The customer's browsing online and they decide they want to order something. So they input their order into the app and that information gets passed from the app to the company, but when the app is being written, we can't say explicitly that the customer might want to order pizza or order a pair of shoes. 
+- What exactly they're ordering is down to the different companies using the app. 
+- We also don't know what will happen after the order is sent. So there might be an immediate response saying the order is on its way, or there might be some checks to see if the orders in stock, or there might be a reply saying that your order will arrive in a month. 
+- The command pattern is a way of making requests when you don't know anything about what's exactly is being requested or what exactly is receiving it. 
+- It does this by encapsulating the request inside an object. 
+- This might seem a bit counterintuitive to develop this used to object-oriented design. 
+- Normally a command is something you would put in a method, not a class, but this is a useful way of decoupling the objects that invokes the command from the objects that knows how to handle it and perform that command. 
+- So the command pattern is especially useful for commands that you might want to perform later on. 
+- For example, they are sometimes used to support, undo and redo operations and things like queuing or logging requests to be performed at different times.
+
+Interpreter Pattern - 
+
+- Imagine a scenario, where two people are trying to communicate but they don't speak the same language. 
+- A translator or an interpreter can join them and translates everything they say to each other. 
+- The interpreter pattern is a way of translating one language into another. 
+- So if you think of Google translate for example, it takes the input language and interprets it into a new language. 
+- There are many different and varied scenarios where the interpreter pattern might be used. 
+- It could be used to write custom regular expressions or writes your own compiler or translate human languages or parsers SQL, or just create a simple calculator. 
+- The idea of the interpreter pattern in Java is that if the same problem keeps coming up, then you can express that problem as a sentence and interpret it. 
+- The interpreter defines a grammar for the language and then used as an abstract syntax tree to interpret it. 
+- This is quite a complicated concept so let's see what it actually looks like. 
+- The first components in the interpreter pattern is the context. If you were translating a sentence into another language, the context would be the sentence. So the context is often just a string. 
+- The next part is an abstract expression class. This is an interface or an abstract class that defines a method used for interpreting the context. 
+- Each time there's interpret method is called, the context has changed in some way. 
+- There are two different possible implementations of the abstract expression, terminal and non-terminal. 
+- A non-terminal expression cause the interpret method, which alters the context, and then it passes the context onto another expression until it reaches the terminal expression. 
+- A terminal expression is the last time the interpret method gets called. 
+- And finally, there is a client which will create instances of expressions to interpret the context. 
+- This structure makes it easy to extend and implement the grammar. 
+- However, the interpreter pattern works best when the grammar being interpreted is simple. Complex grammars can be difficult to maintain because you would need a new expression class for every new rule you introduce.
