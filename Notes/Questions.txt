@@ -77,9 +77,6 @@ Q. What are Varargs??
 
 Q. What is java.lang.OutOfMemory??
 
+Q. What are collection types??
+
 Q. ??
-
-
-Functional prog with streams in Java 9
-2nd section - method references
-
