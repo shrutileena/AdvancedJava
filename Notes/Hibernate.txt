@@ -2,4 +2,32 @@ Hibernate -
 
 What is Hibernate - 
 
-1. 
+1. Hibernate is a framework that simplifies the use of relational databases in Java applications by presenting relational data as simple Java objects otherwise known as plain old Java objects or POJO. 
+2. These objects are accessed in our programs through a session manager. 
+3. Hibernate is referred to as an Object Relational Mapping tool or ORM as Java programmers were used to working with objects so Hibernate takes away the details of accessing the database and allows us to again work with something familiar such as objects.
+4. This tool greatly increases programmer productivity when the application requires data to exist after a program ends, otherwise known as data persistence. 
+5. It makes persistent database access easier by using high-level object handling functions. 
+6. Hibernate is a free open source software available through the GNU general public license.
+
+Diagram - 
+
+Refer HibernateFramework.jpg
+
+At the top, we have our Java application. Our application wants to connect to the data in our database which allows us to have data that exist after our application is finished. So right below the Java application, we have Hibernate. Hibernate configures our interaction with the database, creates a session factory that allows us to create sessions with the database. It allows us to create transactions. Transactions are important when dealing with databases because if there's any problem, you want to be able to roll back your changes so you don't have any data corruption. It offers queries and criteria for our queries. Then Hibernate sits between the Java application and the JDBC, the Java Database Connectivity API.
+
+7. Hibernate takes care of the mapping and configuration required to access the database, hiding the details and allowing us to concentrate on the business logic and not worry about the database schema.
+8. It also provides data query and retrieval operations. 
+9. It generates the SQL syntax needed to access the database and format the results into plain old Java objects instead of a SQL result set, which makes it easier for a programmer to understand and use in their programs. 
+10. The idea of persistence using Java objects involves the mapping of the objects in Java directly to the relational entities in the database or the tables in the database. 
+11. Hibernate makes it so easy to work with the data through these objects instead of dealing directly with one or multiple tables. 
+12. Hibernate can be used in any Java application whether it's a swing application, a servlet, a JSP page, or any application that requires access to a database.
+
+Advantages - 
+
+1. Hibernate takes care of mapping Java classes or objects to database tables using XML files and annotations without writing any lines of code. 
+2. It provides simple APIs for restoring and retrieving Java objects directly to and from the database. 
+3. If there is a change in the database schema or in any table, then you only need to change the XML file properties. 
+4. It handles complex associations of objects in your database. 
+5. It allows for minimal database access with smart fetching strategies
+6. It provides simple querying of data. 
+7. Hibernate supports most of the relational databases such as HQL database engine, DB2/NT, MySQL, Oracle, FrontBase, Microsoft SQL Server, and more.
